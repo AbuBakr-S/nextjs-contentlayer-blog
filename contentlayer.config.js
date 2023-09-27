@@ -3,11 +3,11 @@ import { defineDocumentType, makeSource } from "contentlayer/source-files";
 
 export const Blog = defineDocumentType(() => ({
   name: "Blog",
-  filePathPattern: `**/**/*.mdx`,
+  filePathPattern: "**/**/*.mdx",
   fields: {
     title: { type: "string", required: true },
     description: { type: "string", required: true },
-    image: { type: "image" },
+    image: { type: "string" },
     publishedAt: { type: "date", required: true },
     updatedAt: { type: "date", required: true },
     isPublished: { type: "boolean", default: true },
@@ -16,9 +16,10 @@ export const Blog = defineDocumentType(() => ({
   },
   computedFields: {
     url: {
-      type: "string", resolve: (blog) => `/blogs/${blog._raw.flattenedPath}`,
+      type: "string",
+      resolve: (doc) => `/blogs/${doc._raw.flattenedPath}`,
     },
   },
 }));
 
-export default makeSource({ contentDirPath: "blogs", documentTypes: [Blog] });
+export default makeSource({ contentDirPath: "content", documentTypes: [Blog] });

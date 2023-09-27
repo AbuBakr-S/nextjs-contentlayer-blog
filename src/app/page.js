@@ -1,4 +1,5 @@
-import Image from 'next/image'
+import Image from 'next/image';
+import { allBlogs } from "../../.contentlayer/generated";
 
 export default function Home() {
   return (

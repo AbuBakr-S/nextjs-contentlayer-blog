@@ -11,7 +11,7 @@ export const Header = () => {
       fixed top-6 right-1/2 translate-x-1/2 bg-light/80 backdrop-blur-sm z-50">
         <Link className="mr-2" href="/">Home</Link>
         <Link className="mx-2" href="/about">About</Link>
-        <Link className="mr-2" href="/contact">Contact</Link>
+        <Link className="mx-2" href="/contact">Contact</Link>
         <button>
           <SunIcon />
         </button>

@@ -1,5 +1,6 @@
 // contentlayer.config.ts
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
+import readingTime from "reading-time";
 
 export const Blog = defineDocumentType(() => ({
   name: "Blog",
@@ -19,6 +20,10 @@ export const Blog = defineDocumentType(() => ({
       type: "string",
       resolve: (doc) => `/blogs/${doc._raw.flattenedPath}`,
     },
+    readingTime: {
+      type: "json",
+      resolve: (doc) => readingTime(doc.body.raw)
+    }
   },
 }));
 

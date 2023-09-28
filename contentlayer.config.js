@@ -18,6 +18,9 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 // https://rehype-pretty-code.netlify.app/
 import rehypePrettyCode from "rehype-pretty-code";
 
+// ? generate a unique slug just like GitHub does for markdown headings.
+import GithubSlugger from "github-slugger"
+
 export const Blog = defineDocumentType(() => ({
   name: "Blog",
   filePathPattern: "**/**/*.mdx",
@@ -40,6 +43,27 @@ export const Blog = defineDocumentType(() => ({
     readingTime: {
       type: "json",
       resolve: (doc) => readingTime(doc.body.raw)
+    },
+    toc:{
+      type: "json",
+      resolve: async (doc) => {
+        // extract the headings in markdown denoted by #
+        // we are capturing these '#' in a named capturing group called <flag>
+        // we will used the length of <flag> to tell us the heading level by counting the '#'s
+        // <content> will capture the title string after the space - (## heading two) etc
+        const regulrExp = /\n(?<flag>#{1,6})\s+(?<content>.+)/g;
+        const slugger = new GithubSlugger();
+        const headings = Array.from(doc.body.raw.matchAll(regulrExp)).map(({groups}) => {
+          const flag = groups?.flag;
+          const content = groups?.content;
+          return {
+            level: flag?.length == 1 ? "one" : flag?.length == 2 ? "two" : "three",
+            text: content,
+            slug: content ? slugger.slug(content) : undefined
+          }
+        })
+        return headings;
+      }
     }
   },
 }));

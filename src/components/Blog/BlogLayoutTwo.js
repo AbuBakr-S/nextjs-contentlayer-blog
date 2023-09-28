@@ -4,7 +4,6 @@ import Link from 'next/link';
 import React from 'react'
 
 const BlogLayoutTwo = ({ blog }) => {
-  console.log(blog.title);
   return (
     <div className="group grid grid-cols-12 gap-4 items-center text-dark">
       <Link className="col-span-4 h-full rounded-xl overflow-hidden" href={blog.url}>

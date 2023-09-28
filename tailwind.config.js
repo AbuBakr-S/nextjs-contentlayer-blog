@@ -20,5 +20,9 @@ module.exports = {
       },
     },
   },
-  plugins: [require("@tailwindcss/forms")],
+  // Required for tailwind to work with external libraries such as react hook forms and mdx for blog content
+  plugins: [
+    require("@tailwindcss/forms"),
+    require("@tailwindcss/typography")
+  ],
 };

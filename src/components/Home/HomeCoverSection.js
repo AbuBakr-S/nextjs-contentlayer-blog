@@ -3,6 +3,7 @@ import { sortBlogs } from "../../utils/helpers";
 import Image from "next/image";
 import Link from "next/link";
 import Tag from "../Elements/Tag";
+import { slug } from "github-slugger";
 
 const HomeCoverSection = ({ blogs }) => {
   const sortedBlogs = sortBlogs(blogs);
@@ -21,7 +22,7 @@ const HomeCoverSection = ({ blogs }) => {
         />
         <div className="w-3/4 flex flex-col items-start p-16 justify-center z-0 text-light">
           <Tag link={`categories/${blog.tags[0]}`} name={blog.tags[0]} />
-          <Link className="mt-6" href={blog.url}>
+          <Link className="mt-6" href={slug(blog.url)}>
             <h1 className="font-bold capitalize text-4xl">
               <span className="bg-gradient-to-r from-accent to-accent dark:from-accentDark/50 
                 dark:to-accentDark/50 bg-[length:0px_6px]

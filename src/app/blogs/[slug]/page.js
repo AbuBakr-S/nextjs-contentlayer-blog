@@ -7,7 +7,7 @@ import { slug } from "github-slugger";
 
 export default function BlogPage({ params }) {
   const blog = allBlogs.find(blog => blog._raw.flattenedPath === params.slug)
-  console.log(blog)
+  
   return (
     <article>
       <div className="mb-8 text-center relative w-full h-[70vh] bg-dark">

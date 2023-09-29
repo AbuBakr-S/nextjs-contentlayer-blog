@@ -1,12 +1,32 @@
 import { allBlogs } from '@/.contentLayer/generated';
-import { slug } from 'github-slugger';
+import GithubSlugger, { slug } from 'github-slugger';
 import Categories from '../../../components/Blog/Categories';
 import BlogLayoutThree from '../../../components/Blog/BlogLayoutThree';
 
+const slugger = new GithubSlugger();
+
+// statically generate the tag params
+// this is a unique list of categories which will be routes to our category pages via the URL param
+export const generateStaticParams = async () => {
+  const categories = [];
+  const paths = [{ slug: "all" }];
+
+  allBlogs.map((blog) => {
+    if (blog.isPublished) {
+      blog.tags.map(tag => {
+        let slugified = slugger.slug(tag);
+        if (!categories.includes(slugified)) {
+          categories.push(slugified);
+          paths.push({ slug: slugified });
+        }
+      });
+    }
+  })
+  return paths;
+}
+
 const CategoryPage = ({ params }) => {
-
   const allCategories = ["all"];
-
   // populate the all catagories array with unique tags
   // return a list of blogs for a given category via params field
   const blogs = allBlogs.filter(blog => {

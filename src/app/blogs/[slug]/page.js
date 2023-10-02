@@ -8,11 +8,11 @@ import { slug } from "github-slugger";
 // statically generate the tag params
 // this is a unique list of categories which will be routes to our category pages via the URL param
 export const generateStaticParams = async () => {
-  return allBlogs.find(blog => ({ slug: blog._raw.flattenedPath }));
+  return allBlogs.map(blog => ({ slug: blog._raw.flattenedPath }));
 }
 
 export default function BlogPage({ params }) {
-  const blog = allBlogs.map(blog => blog._raw.flattenedPath === params.slug)
+  const blog = allBlogs.find(blog => blog._raw.flattenedPath === params.slug)
   
   return (
     <article>

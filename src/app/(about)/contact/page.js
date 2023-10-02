@@ -1,6 +1,6 @@
 import React from 'react'
-import LottieAnimation from '../../components/Contact/LottieAnimation'
-import ContactForm from '../../components/Contact/ContactForm'
+import LottieAnimation from '../../../components/Contact/LottieAnimation'
+import ContactForm from '../../../components/Contact/ContactForm'
 
 const Contact = () => {
   return (

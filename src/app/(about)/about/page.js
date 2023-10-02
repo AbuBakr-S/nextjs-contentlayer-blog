@@ -1,6 +1,6 @@
 import React from "react";
-import AboutCoverSection from "../../components/About/AboutCoverSection";
-import Skills from "../../components/About/Skills";
+import AboutCoverSection from "../../../components/About/AboutCoverSection";
+import Skills from "../../../components/About/Skills";
 import Link from "next/link";
 
 const About = () => {

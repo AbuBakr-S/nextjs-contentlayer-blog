@@ -18,6 +18,15 @@ module.exports = {
         mr: ["var(--font-mr)"],
         in: ["var(--font-in)"],
       },
+      animation: {
+        roll: "roll 24s linear infinite"
+      },
+      keyframes: {
+        roll: {
+          "0%": { transform: "translateX(100%)" },
+          "100%": { transform: "translateX(-100%)" }
+        }
+      }
     },
   },
   // Required for tailwind to work with external libraries such as react hook forms and mdx for blog content

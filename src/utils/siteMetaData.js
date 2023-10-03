@@ -6,7 +6,7 @@ const siteMetadata = {
   language: 'en-us',
   theme: 'system', // system, dark or light
   // TODO: Update URL once deployed
-  siteUrl: 'http://localhost:3000/',
+  siteUrl: 'http://localhost:3000',
   siteLogo: '/logo.png',
   socialBanner: '/social-banner.png',
   github: 'https://github.com/AbuBakr-S',

@@ -2,6 +2,7 @@ import React from 'react'
 import Logo from './Logo'
 import Link from 'next/link'
 import { GithubIcon, LinkedInIcon, SunIcon, TwitterIcon } from '../Icons'
+import siteMetadata from '../../utils/siteMetaData'
 
 export const Header = () => {
   return (
@@ -18,9 +19,9 @@ export const Header = () => {
       </nav>
       <div>
         {/* External links */}
-        <a className="inline-block w-6 h-6 mr-4" href="https://www.linkedin.com/in/abzsiddique/"><LinkedInIcon className="hover:scale-125 transition-all ease duration-200" /></a>
-        <a className="inline-block w-6 h-6 mr-4" href="https://twitter.com/a_siddique_17"><TwitterIcon className="hover:scale-125 transition-all ease duration-200" /></a>
-        <a className="inline-block w-6 h-6 mr-4" href="https://github.com/AbuBakr-S"><GithubIcon className="hover:scale-125 transition-all ease duration-200" /></a>
+        <a className="inline-block w-6 h-6 mr-4" href={siteMetadata.linkedin}><LinkedInIcon className="hover:scale-125 transition-all ease duration-200" /></a>
+        <a className="inline-block w-6 h-6 mr-4" href={siteMetadata.twitter}><TwitterIcon className="hover:scale-125 transition-all ease duration-200" /></a>
+        <a className="inline-block w-6 h-6 mr-4" href={siteMetadata.github}><GithubIcon className="hover:scale-125 transition-all ease duration-200" /></a>
       </div>
     </div>
   )

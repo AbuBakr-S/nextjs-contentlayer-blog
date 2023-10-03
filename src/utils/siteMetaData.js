@@ -6,6 +6,8 @@ const siteMetadata = {
   language: 'en-us',
   theme: 'system', // system, dark or light
   // TODO: Update URL once deployed
+  // TODO: Update email
+  email: 'abubakar@email.com',
   siteUrl: 'http://localhost:3000',
   siteLogo: '/logo.png',
   socialBanner: '/social-banner.png',

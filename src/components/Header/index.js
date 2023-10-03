@@ -1,10 +1,13 @@
+"use client"
 import React from 'react'
 import Logo from './Logo'
 import Link from 'next/link'
 import { GithubIcon, LinkedInIcon, SunIcon, TwitterIcon } from '../Icons'
 import siteMetadata from '../../utils/siteMetaData'
+import { useThemeSwitch } from '../Hooks/useThemeSwitch'
 
 export const Header = () => {
+  const [theme, setTheme] = useThemeSwitch();
   return (
     <div className="w-full p-4 px-10 flex items-center justify-between">
       <Logo />
@@ -13,7 +16,7 @@ export const Header = () => {
         <Link className="mr-2" href="/">Home</Link>
         <Link className="mx-2" href="/about">About</Link>
         <Link className="mx-2" href="/contact">Contact</Link>
-        <button>
+        <button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
           <SunIcon />
         </button>
       </nav>

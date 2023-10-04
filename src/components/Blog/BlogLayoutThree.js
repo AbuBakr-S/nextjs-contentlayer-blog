@@ -24,7 +24,7 @@ const BlogLayoutThree = ({ blog }) => {
           {blog.tags[0]}
         </span>
         <Link href={blog.url} className="inline-block my-1">
-          <h2 className="font-semibold capitalize  text-base sm:text-lg">
+          <h2 className="font-semibold capitalize text-base sm:text-lg">
             <span
               className="bg-gradient-to-r from-accent/50 to-accent/50  dark:from-accentDark/50
               dark:to-accentDark/50
@@ -36,7 +36,7 @@ const BlogLayoutThree = ({ blog }) => {
           </h2>
         </Link>
 
-        <span className="capitalize text-gray dark:text-light/50 font-semibold text-sm  sm:text-base">
+        <span className="capitalize text-gray dark:text-light/50 font-semibold text-sm sm:text-base">
           {format(new Date(blog.publishedAt), "MMMM dd, yyyy")}
         </span>
       </div>

@@ -12,7 +12,7 @@ export const Header = () => {
   const [click, setClick] = useState();
 
   const toggle = () => setClick(!click);
-
+  console.log('Test')
   return (
     <div className="w-full p-4 px-5 sm:px-10 flex items-center justify-between">
       <Logo />

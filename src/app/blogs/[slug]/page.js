@@ -73,7 +73,7 @@ export default function BlogPage({ params }) {
             link={`/categories/${slug(blog.tags[0])}`} 
             className="px-6 text-sm py-2"
           />
-          <h1 className="inline-block mt-6 font-semibold capitalize sm:text-2xl text-light md:text-3xl lg:text-5xl leading-normal relative w-5/6">{blog.title}</h1>
+          <h1 className="inline-block mt-6 font-semibold capitalize text-xl sm:text-2xl text-light md:text-3xl lg:text-5xl leading-normal relative w-5/6">{blog.title}</h1>
         </div>
         <div className="absolute top-0 right-0 bottom-0 left-0 h-full bg-dark/40">
           <Image
@@ -107,7 +107,6 @@ export default function BlogPage({ params }) {
                       // conditional classes per heading level using data attributes
                       className="data-[level=two]:pl-0 data-[level=two]:pt-2
                         data-[level=two]:border-t border-solid border-dark/40
-
                         data-[level=three]:pl-4
                         sm:data-[level=three]:pl-6
                         flex items-center justify-start"

@@ -1,4 +1,4 @@
-import { allBlogs } from '@/.contentLayer/generated';
+import { allBlogs } from '@/.contentlayer/generated';
 import GithubSlugger, { slug } from 'github-slugger';
 import Categories from '../../../components/Blog/Categories';
 import BlogLayoutThree from '../../../components/Blog/BlogLayoutThree';

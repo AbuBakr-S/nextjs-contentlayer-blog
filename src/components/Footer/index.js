@@ -20,7 +20,7 @@ const Footer = () => {
         className="mt-6 w-fit sm:min-w-[384px] flex items-stretch bg-light dark:bg-dark p-1 sm:p-2 rounded mx04"
       >
         <input type="email" placeholder="Enter your email" {...register("email", {required: true, maxLength: 80})}
-          className="w-full bg-transparent pl-0 text-dark focus:border-dark focus:ring-0 border-0 border-b mr-2 pb-1"
+          className="w-full bg-transparent pl-2 sm:pl-0 text-dark focus:border-dark focus:ring-0 border-0 border-b mr-2 pb-1"
         />
         <input type="submit"
           className="bg-dark text-light dark:text-dark dark:bg-light cursor-pointer font-medium rounded px-3 sm:px-5 py-1"
@@ -29,10 +29,10 @@ const Footer = () => {
       <div className="flex items-center mt-8">
         {/* External links */}
         <a className="inline-block w-6 h-6 mr-4" href={siteMetadata.linkedin}><LinkedInIcon className="hover:scale-125 transition-all ease duration-200" /></a>
-        <a className="inline-block w-6 h-6 mr-4" href={siteMetadata.twitter}><TwitterIcon className="hover:scale-125 transition-all ease duration-200 bg-white" /></a>
-        <a className="inline-block w-6 h-6 mr-4" href={siteMetadata.github}><GithubIcon className="hover:scale-125 transition-all ease duration-200 fill-light" /></a>
+        <a className="inline-block w-6 h-6 mr-4" href={siteMetadata.twitter}><TwitterIcon className="hover:scale-125 transition-all ease duration-200 bg-light dark:bg-transparent" /></a>
+        <a className="inline-block w-6 h-6 mr-4" href={siteMetadata.github}><GithubIcon className="hover:scale-125 transition-all ease duration-200 fill-light dark:fill-dark" /></a>
       </div>
-      <div className="w-full mt-16 md:mt-24 relative font-medium border-t border-solid border-light py-6 px-8 flex  flex-col md:flex-row items-center justify-between">
+      <div className="w-full mt-16 md:mt-24 relative font-medium border-t border-solid border-light py-6 px-8 flex flex-col md:flex-row items-center justify-between">
         <span className="text-center">
           &copy;2023 ASiddique. All rights reserved.
         </span>

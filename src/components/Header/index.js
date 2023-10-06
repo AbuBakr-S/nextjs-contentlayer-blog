@@ -12,7 +12,6 @@ export const Header = () => {
   const [click, setClick] = useState();
 
   const toggle = () => setClick(!click);
-  console.log('Test')
   return (
     <div className="w-full p-4 px-5 sm:px-10 flex items-center justify-between">
       <Logo />
@@ -71,7 +70,9 @@ export const Header = () => {
         <Link className="mx-2" href="/about">About</Link>
         <Link className="mx-2" href="/contact">Contact</Link>
         <button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
-          <SunIcon />
+          {
+            theme === "light" ? <MoonIcon className={"fill-dark"} />  : <SunIcon className={"fill-dark"} />
+          }
         </button>
       </nav>
       <div className="hidden sm:flex items-center">

@@ -15,6 +15,7 @@ const BlogLayoutTwo = ({ blog }) => {
           alt={blog.title}
           height={blog.image.height}
           width={blog.image.width}
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
         />
       </Link>
       <div className="w-full col-span-12 lg:col-span-8">

@@ -18,6 +18,7 @@ const BlogLayoutOne = ({ blog }) => {
         alt={blog.title}
         height={blog.image.height}
         width={blog.image.width}
+        priority
       />
       <div className="w-full absolute bottom-0 p-10 z-20">
         <Tag link={`categories/${slug(blog.tags[0])}`} name={blog.tags[0]}

@@ -84,6 +84,8 @@ export default function BlogPage({ params }) {
             alt={blog.title}
             height={blog.image.height}
             width={blog.image.width}
+            priority
+            sizes="100vw"
           />
         </div>
       </div>

@@ -69,7 +69,10 @@ export const Header = () => {
         <Link className="mr-2" href="/">Home</Link>
         <Link className="mx-2" href="/about">About</Link>
         <Link className="mx-2" href="/contact">Contact</Link>
-        <button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
+        <button onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+          className={cx("w-6 h-6 ease ml-2 flex items-center justify-center rounded-full p-1", theme === "light" ? "bg-dark text-light" : "bg-light text-dark" )}
+          aria-label="theme-switcher"
+        >
           {
             theme === "light" ? <MoonIcon className={"fill-dark"} />  : <SunIcon className={"fill-dark"} />
           }

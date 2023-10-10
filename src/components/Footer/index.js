@@ -28,9 +28,9 @@ const Footer = () => {
       </form>
       <div className="flex items-center mt-8">
         {/* External links */}
-        <a className="inline-block w-6 h-6 mr-4" href={siteMetadata.linkedin}><LinkedInIcon className="hover:scale-125 transition-all ease duration-200" /></a>
-        <a className="inline-block w-6 h-6 mr-4" href={siteMetadata.twitter}><TwitterIcon className="hover:scale-125 transition-all ease duration-200 bg-light dark:bg-transparent" /></a>
-        <a className="inline-block w-6 h-6 mr-4" href={siteMetadata.github}><GithubIcon className="hover:scale-125 transition-all ease duration-200 fill-light dark:fill-dark" /></a>
+        <a className="inline-block w-6 h-6 mr-4" href={siteMetadata.linkedin} aria-label="Reach out to me via LinkedIn" target="_blank"><LinkedInIcon className="hover:scale-125 transition-all ease duration-200" /></a>
+        <a className="inline-block w-6 h-6 mr-4" href={siteMetadata.twitter} aria-label="Reach out to me via Twitter" target="_blank"><TwitterIcon className="hover:scale-125 transition-all ease duration-200 bg-light dark:bg-transparent" /></a>
+        <a className="inline-block w-6 h-6 mr-4" href={siteMetadata.github} aria-label="Reach out to me via Github" target="_blank"><GithubIcon className="hover:scale-125 transition-all ease duration-200 fill-light dark:fill-dark" /></a>
       </div>
       <div className="w-full mt-16 md:mt-24 relative font-medium border-t border-solid border-light py-6 px-8 flex flex-col md:flex-row items-center justify-between">
         <span className="text-center">
